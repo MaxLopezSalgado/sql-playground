@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/maximilianolopezsalgado/data_projects/sql-playground/day2.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1285"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:mainDepartments"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">INSERT INTO Departments(id,name,budget) VALUES(14,'IT',65000);
+INSERT INTO Departments(id,name,budget) VALUES(37,'Accounting',15000);
+INSERT INTO Departments(id,name,budget) VALUES(59,'Human Resources',240000);
+INSERT INTO Departments(id,name,budget) VALUES(77,'Research',55000);
+
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('123234877','Michael','Rogers',14);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('152934485','Anand','Manikutty',14);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('222364883','Carol','Smith',37);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('326587417','Joe','Stevens',37);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('332154719','Mary-Anne','Foster',14);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('332569843','George','ODonnell',77);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('546523478','John','Doe',59);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('631231482','David','Smith',77);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('654873219','Zacary','Efron',59);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('745685214','Eric','Goldsmith',59);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('845657245','Elizabeth','Doe',14);
+INSERT INTO Employees(ssn,name,lastname,department) VALUES('845657246','Kumar','Swamy',14);
+
+-- 2.1 Select the last name of all employees.
+SELECT lastname 
+FROM Employees
+
+-- 2.2 Select the last name of all employees, without duplicates.
+SELECT DISTINCT lastname
+FROM Employees;
+
+-- 2.3 Select all the data of employees whose last name is &quot;Smith&quot;.
+SELECT *
+FROM Employees
+WHERE lastname = &quot;Smith&quot;;
+
+-- 2.4 Select all the data of employees whose last name is &quot;Smith&quot; or &quot;Doe&quot;.
+SELECT *
+FROM Employees
+WHERE lastname = &quot;Smith&quot; OR  lastname = &quot;Doe&quot;;
+
+-- 2.5 Select all the data of employees that work in department 14.
+SELECT *
+FROM Employees
+WHERE department = 14;
+
+-- 2.6 Select all the data of employees that work in department 37 or department 77.
+SELECT *
+FROM Employees
+WHERE department = 37 or department = 77;
+
+-- 2.7 Select all the data of employees whose last name begins with an &quot;S&quot;.
+SELECT *
+FROM Employees
+WHERE lastname  LIKE 'S%';
+
+-- 2.8 Select the sum of all the departments' budgets.
+SELECT SUM(budget)
+FROM Departments;
+
+-- 2.9 Select the number of employees in each department (you only need to show the department code and the number of employees).
+SELECT COUNT(ssn), d.id
+FROM Employees e
+JOIN Departments d on d.id = e.department
+GROUP BY department;
+
+-- 2.10 Select all the data of employees, including each employee's department's data.
+SELECT *
+FROM Employees e
+JOIN Departments d ON d.id = e.department
+
+-- 2.11 Select the name and last name of each employee, along with the name and budget of the employee's department.
+SELECT e.name, e.lastname, d.budget, d.name
+FROM Employees e
+JOIN Departments d ON d.id = e.department;
+
+-- 2.12 Select the name and last name of employees working for departments with a budget greater than $60,000.
+
+
+-- 2.13 Select the departments with a budget larger than the average budget of all the departments.
+
+
+-- 2.14 Select the names of departments with more than two employees.
+
+
+-- 2.15 Select the name and last name of employees working for the two departments with lowest budget.
+
+
+-- 2.16  Add a new department called &quot;Quality Assurance&quot;, with a budget of $40,000 and departmental code 11. 
+
+
+-- And Add an employee called &quot;Mary Moore&quot; in that department, with SSN 847-21-9811.
+
+
+-- 2.17 Reduce the budget of all departments by 10%.
+
+
+-- 2.18 Reassign all employees from the Research department (code 77) to the IT department (code 14).
+
+
+-- 2.19 Delete from the table all employees in the IT department (code 14).
+
+
+-- 2.20 Delete from the table all employees who work in departments with a budget greater than or equal to $60,000.
+
+
+-- 2.21 Delete from the table all employees.
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
