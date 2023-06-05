@@ -17,13 +17,17 @@ INSERT INTO Boxes(id, contents, value, warehouse) VALUES('P2T6', 'Scissors', 150
 INSERT INTO Boxes(id, contents, value, warehouse) VALUES('TU55', 'Papers', 90, 5);
 
 --3.1 Select all warehouses.
-
+SELECT *
+FROM Warehouses
 
 --3.2 Select all boxes with a value larger than $150.
-
+SELECT *
+FROM Boxes
+WHERE value &gt;= 150;
 
 --3.3 Select all distinct contents in all the boxes.
-
+SELECT DISTINCT contents
+FROM Boxes;
 
 --3.4 Select the average value of all the boxes.
 
