@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/maximilianolopezsalgado/data_projects/sql-playground/databases/day3.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1398"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainBoxes"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Departments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="31"/><column index="2" value="160"/><column index="3" value="71"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Warehouses" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="25"/><column index="2" value="126"/><column index="3" value="74"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">INSERT INTO Warehouses(id, location, capacity) VALUES(1, 'Chicago', 3);
+INSERT INTO Warehouses(id, location, capacity) VALUES(2, 'Chicago', 4);
+INSERT INTO Warehouses(id, location, capacity) VALUES(3, 'New York', 7);
+INSERT INTO Warehouses(id, location, capacity) VALUES(4, 'Los Angeles', 2);
+INSERT INTO Warehouses(id, location, capacity) VALUES(5, 'San Francisco', 8);
+
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('0MN7', 'Rocks', 180, 3);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('4H8P', 'Rocks', 250, 1);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('4RT3', 'Scissors', 190, 4);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('7G3H', 'Rocks', 200, 1);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('8JN6', 'Papers', 75, 1);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('8Y6U', 'Papers', 50, 3);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('9J6F', 'Papers', 175, 2);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('LL08', 'Rocks', 140, 4);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('P0H6', 'Scissors', 125, 1);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('P2T6', 'Scissors', 150, 2);
+INSERT INTO Boxes(id, contents, value, warehouse) VALUES('TU55', 'Papers', 90, 5);
+
+--3.1 Select all warehouses.
+
+
+--3.2 Select all boxes with a value larger than $150.
+
+
+--3.3 Select all distinct contents in all the boxes.
+
+
+--3.4 Select the average value of all the boxes.
+
+
+--3.5 Select the warehouse code and the average value of the boxes in each warehouse.
+
+
+--3.6 Same as previous exercise, but select only those warehouses where the average value of the boxes is greater than 150.
+
+
+--3.7 Select the code of each box, along with the name of the city the box is located in.
+
+
+--3.8 Select the warehouse codes, along with the number of boxes in each warehouse. 
+
+
+--3.9 Select the codes of all warehouses that are saturated (a warehouse is saturated if the number of boxes in it is larger than the warehouse's capacity).
+
+
+--3.10 Select the codes of all the boxes located in Chicago.
+
+
+--3.11 Create a new warehouse in New York with a capacity for 3 boxes.
+
+
+--3.12 Create a new box, with code &quot;H5RT&quot;, containing &quot;Papers&quot; with a value of $200, and located in warehouse 2.
+
+
+--3.13 Reduce the value of all boxes by 15%.
+
+
+--3.14 Remove all boxes with a value lower than $100.
+
+
+-- 3.15 Remove all boxes from saturated warehouses.
+
+
+-- 3.16 Add Index for column &quot;Warehouse&quot; in table &quot;boxes&quot;
+    -- !!!NOTE!!!: index should NOT be used on small tables in practice
+
+	
+-- 3.17 Print all the existing indexes
+    -- !!!NOTE!!!: index should NOT be used on small tables in practice
+
+	
+-- 3.18 Remove (drop) the index you added just
+    -- !!!NOTE!!!: index should NOT be used on small tables in practice
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
