@@ -94,27 +94,44 @@ DELETE FROM Boxes
 WHERE value &lt; 100;
 
 -- 3.15 Remove all boxes from saturated warehouses.
+DELETE FROM Boxes
+WHERE warehouse IN (
+  SELECT w.id
+  FROM Warehouses w
+  JOIN Boxes b ON w.id = b.warehouse
+  GROUP BY w.id
+  HAVING COUNT(b.id) &gt; w.capacity
+);
+
+-- OR
+
 WITH boxcounts AS (
 	SELECT warehouse, COUNT(value) as box_count
 	FROM Boxes
 	GROUP BY warehouse
 )
-
 DELETE FROM Boxes
 WHERE warehouse IN (
-		SELECT id
-		FROM Warehouses
-		WHERE boxcounts &gt; capacity
-);
+	SELECT id
+	FROM Warehouses w
+	JOIN boxcounts bc ON w.id = bc.warehouse
+	WHERE bc.box_count &gt; capacity
+); 
 
 -- 3.16 Add Index for column &quot;Warehouse&quot; in table &quot;boxes&quot;
     -- !!!NOTE!!!: index should NOT be used on small tables in practice
+CREATE INDEX warehouse_index
+ON Boxes (warehouse);
 
+SELECT warehouse
+FROM Boxes;
 	
 -- 3.17 Print all the existing indexes
     -- !!!NOTE!!!: index should NOT be used on small tables in practice
-
+SELECT name, tbl_name
+FROM sqlite_master
+WHERE type = 'index';
 	
 -- 3.18 Remove (drop) the index you added just
     -- !!!NOTE!!!: index should NOT be used on small tables in practice
-</sql><current_tab id="0"/></tab_sql></sqlb_project>
+DROP INDEX warehouse_index;</sql><current_tab id="0"/></tab_sql></sqlb_project>
