@@ -47,21 +47,35 @@ FROM MovieTheaters
 WHERE Movie IS NULL;
 
 -- 4.5 Select all data from all movie theaters and, additionally, the data from the movie that is being shown in the theater (if one is being shown).
-
+SELECT mt.*, m.Title AS MovieTitle, m.Rating
+FROM MovieTheaters mt
+LEFT JOIN Movies m ON mt.Movie = m.Code;
 
 -- 4.6 Select all data from all movies and, if that movie is being shown in a theater, show the data from the theater.
-
+SELECT m.*, mt.Name AS Theater_name, mt.Code AS Theater_code
+FROM Movies m
+LEFT JOIN MovieTheaters mt ON mt.Movie = m.Code;
 
 -- 4.7 Show the titles of movies not currently being shown in any theaters.
-
+SELECT m.Title
+FROM Movies m
+LEFT JOIN MovieTheaters mt ON mt.Movie = m.Code
+WHERE NOT m.Title = mt.Movie;
 
 -- 4.8 Add the unrated movie &quot;One, Two, Three&quot;.
-
+INSERT INTO Movies (Code,Title,Rating) VALUES(9,'One, Two, Three','NULL');
 
 -- 4.9 Set the rating of all unrated movies to &quot;G&quot;.
-
+UPDATE Movies
+SET Rating = 'G'
+WHERE Rating IS NULL;
 
 -- 4.10 Remove movie theaters projecting movies rated &quot;NC-17&quot;.
-
+DELETE FROM MovieTheaters
+WHERE Movie IN (
+    SELECT Title
+    FROM Movies
+    WHERE Rating = 'NC-17'
+);
 
 </sql><current_tab id="0"/></tab_sql></sqlb_project>
