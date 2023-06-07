@@ -4,4 +4,6 @@
 /Users/maximilianolopezsalgado/data_projects/sql-playground/databases
 # Ignore zip and csv files
 *.csv
-*.zip  
+*.zip
+*.db 
+*.db-journal  
