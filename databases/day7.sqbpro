@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/maximilianolopezsalgado/data_projects/sql-playground/databases/day6.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2105"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,10:mainAssignedTo"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Boxes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="59"/><column index="2" value="79"/><column index="3" value="51"/><column index="4" value="96"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Departments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="31"/><column index="2" value="160"/><column index="3" value="71"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Warehouses" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="25"/><column index="2" value="126"/><column index="3" value="74"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Employee (
+  EmployeeID INTEGER,
+  Name VARCHAR(255) NOT NULL,
+  Position VARCHAR(255) NOT NULL,
+  Salary REAL NOT NULL,
+  Remarks VARCHAR(255),
+  PRIMARY KEY (EmployeeID)
+); 
+
+CREATE TABLE Planet (
+  PlanetID INTEGER,
+  Name VARCHAR(255) NOT NULL,
+  Coordinates REAL NOT NULL,
+  PRIMARY KEY (PlanetID)
+); 
+
+CREATE TABLE Shipment (
+  ShipmentID INTEGER,
+  Date DATE,
+  Manager INTEGER NOT NULL,
+  Planet INTEGER NOT NULL,
+  PRIMARY KEY (ShipmentID)
+);
+
+CREATE TABLE Has_Clearance (
+  Employee INTEGER NOT NULL,
+  Planet INTEGER NOT NULL,
+  Level INTEGER NOT NULL,
+  PRIMARY KEY(Employee, Planet)
+); 
+
+CREATE TABLE Client (
+  AccountNumber INTEGER,
+  Name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (AccountNumber)
+);
+  
+CREATE TABLE Package (
+  Shipment INTEGER NOT NULL,
+  PackageNumber INTEGER NOT NULL,
+  Contents VARCHAR(255) NOT NULL,
+  Weight REAL NOT NULL,
+  Sender INTEGER NOT NULL,
+  Recipient INTEGER NOT NULL,
+  PRIMARY KEY(Shipment, PackageNumber)
+  );
+
+
+INSERT INTO Client VALUES(1, 'Zapp Brannigan');
+INSERT INTO Client VALUES(2, &quot;Al Gore's Head&quot;);
+INSERT INTO Client VALUES(3, 'Barbados Slim');
+INSERT INTO Client VALUES(4, 'Ogden Wernstrom');
+INSERT INTO Client VALUES(5, 'Leo Wong');
+INSERT INTO Client VALUES(6, 'Lrrr');
+INSERT INTO Client VALUES(7, 'John Zoidberg');
+INSERT INTO Client VALUES(8, 'John Zoidfarb');
+INSERT INTO Client VALUES(9, 'Morbo');
+INSERT INTO Client VALUES(10, 'Judge John Whitey');
+INSERT INTO Client VALUES(11, 'Calculon');
+
+INSERT INTO Employee VALUES(1, 'Phillip J. Fry', 'Delivery boy', 7500.0, 'Not to be confused with the Philip J. Fry from Hovering Squid World 97a');
+INSERT INTO Employee VALUES(2, 'Turanga Leela', 'Captain', 10000.0, NULL);
+INSERT INTO Employee VALUES(3, 'Bender Bending Rodriguez', 'Robot', 7500.0, NULL);
+INSERT INTO Employee VALUES(4, 'Hubert J. Farnsworth', 'CEO', 20000.0, NULL);
+INSERT INTO Employee VALUES(5, 'John A. Zoidberg', 'Physician', 25.0, NULL);
+INSERT INTO Employee VALUES(6, 'Amy Wong', 'Intern', 5000.0, NULL);
+INSERT INTO Employee VALUES(7, 'Hermes Conrad', 'Bureaucrat', 10000.0, NULL);
+INSERT INTO Employee VALUES(8, 'Scruffy Scruffington', 'Janitor', 5000.0, NULL);
+
+INSERT INTO Planet VALUES(1, 'Omicron Persei 8', 89475345.3545);
+INSERT INTO Planet VALUES(2, 'Decapod X', 65498463216.3466);
+INSERT INTO Planet VALUES(3, 'Mars', 32435021.65468);
+INSERT INTO Planet VALUES(4, 'Omega III', 98432121.5464);
+INSERT INTO Planet VALUES(5, 'Tarantulon VI', 849842198.354654);
+INSERT INTO Planet VALUES(6, 'Cannibalon', 654321987.21654);
+INSERT INTO Planet VALUES(7, 'DogDoo VII', 65498721354.688);
+INSERT INTO Planet VALUES(8, 'Nintenduu 64', 6543219894.1654);
+INSERT INTO Planet VALUES(9, 'Amazonia', 65432135979.6547);
+
+INSERT INTO Has_Clearance VALUES(1, 1, 2);
+INSERT INTO Has_Clearance VALUES(1, 2, 3);
+INSERT INTO Has_Clearance VALUES(2, 3, 2);
+INSERT INTO Has_Clearance VALUES(2, 4, 4);
+INSERT INTO Has_Clearance VALUES(3, 5, 2);
+INSERT INTO Has_Clearance VALUES(3, 6, 4);
+INSERT INTO Has_Clearance VALUES(4, 7, 1);
+
+INSERT INTO Shipment VALUES(1, '3004/05/11', 1, 1);
+INSERT INTO Shipment VALUES(2, '3004/05/11', 1, 2);
+INSERT INTO Shipment VALUES(3, NULL, 2, 3);
+INSERT INTO Shipment VALUES(4, NULL, 2, 4);
+INSERT INTO Shipment VALUES(5, NULL, 7, 5);
+
+INSERT INTO Package VALUES(1, 1, 'Undeclared', 1.5, 1, 2);
+INSERT INTO Package VALUES(2, 1, 'Undeclared', 10.0, 2, 3);
+INSERT INTO Package VALUES(2, 2, 'A bucket of krill', 2.0, 8, 7);
+INSERT INTO Package VALUES(3, 1, 'Undeclared', 15.0, 3, 4);
+INSERT INTO Package VALUES(3, 2, 'Undeclared', 3.0, 5, 1);
+INSERT INTO Package VALUES(3, 3, 'Undeclared', 7.0, 2, 3);
+INSERT INTO Package VALUES(4, 1, 'Undeclared', 5.0, 4, 5);
+INSERT INTO Package VALUES(4, 2, 'Undeclared', 27.0, 1, 2);
+INSERT INTO Package VALUES(5, 1, 'Undeclared', 100.0, 5, 1);
+
+-- 7.1 Who received a 1.5kg package?
+    -- The result is &quot;Al Gore's Head&quot;.
+SELECT p.Weight, c.Name
+FROM Package p
+JOIN Client c ON p.Recipient = c.AccountNumber
+WHERE p.Weight = 1.5;
+
+-- 7.2 What is the total weight of all the packages that he sent?
+SELECT SUM(Weight) AS Total_weight
+FROM Package;
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
