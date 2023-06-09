@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/maximilianolopezsalgado/data_projects/sql-playground/databases/day8.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2184"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainUndergoes"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Affiliated_With" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="85"/><column index="2" value="102"/><column index="3" value="143"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Boxes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="59"/><column index="2" value="79"/><column index="3" value="51"/><column index="4" value="96"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Departments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="31"/><column index="2" value="160"/><column index="3" value="71"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Physician" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="106"/><column index="2" value="160"/><column index="3" value="239"/><column index="4" value="101"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Procedures" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="51"/><column index="2" value="273"/><column index="3" value="76"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Trained_In" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="281"/><column index="2" value="210"/><column index="3" value="270"/><column index="4" value="213"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Undergoes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="101"/><column index="2" value="91"/><column index="3" value="51"/><column index="4" value="103"/><column index="5" value="85"/><column index="6" value="128"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Warehouses" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="25"/><column index="2" value="126"/><column index="3" value="74"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Physician (
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/maximilianolopezsalgado/data_projects/sql-playground/databases/day8.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2184"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:mainAppointment"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Affiliated_With" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="85"/><column index="2" value="102"/><column index="3" value="143"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Appointment" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="127"/><column index="2" value="101"/><column index="3" value="94"/><column index="4" value="85"/><column index="5" value="153"/><column index="6" value="153"/><column index="7" value="155"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Boxes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="59"/><column index="2" value="79"/><column index="3" value="51"/><column index="4" value="96"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Departments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="31"/><column index="2" value="160"/><column index="3" value="71"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Physician" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="106"/><column index="2" value="160"/><column index="3" value="239"/><column index="4" value="101"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Procedures" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="51"/><column index="2" value="273"/><column index="3" value="76"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Room" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="73"/><column index="2" value="61"/><column index="3" value="94"/><column index="4" value="95"/><column index="5" value="102"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Trained_In" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="281"/><column index="2" value="210"/><column index="3" value="270"/><column index="4" value="213"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Undergoes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="101"/><column index="2" value="91"/><column index="3" value="51"/><column index="4" value="103"/><column index="5" value="85"/><column index="6" value="128"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Warehouses" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="25"/><column index="2" value="126"/><column index="3" value="74"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Physician (
 EmployeeID INTEGER NOT NULL,
 Name TEXT NOT NULL,
 Position TEXT NOT NULL,
@@ -287,34 +287,80 @@ WHERE T.Physician IS NULL;
 -- 8.2 Same as the previous query, but include the following information in the results: Physician name, name of procedure, date when the procedure was carried out, name of the patient the procedure was carried out on.
 SELECT DISTINCT P.Name AS Physician_name , PR.Name AS Procedure_name , U.Date AS Procedure_date , PA.Name AS Patient_name
 FROM Physician AS P
-JOIN Patient AS PA ON PA.PCP = P.Employee
+JOIN Patient AS PA ON PA.PCP = P.EmployeeID
 JOIN Undergoes AS U ON U.Patient = PA.SSN
 JOIN Procedures AS PR ON PR.Code = U.Procedure
 LEFT JOIN Trained_In AS T ON T.Physician = P.EmployeeID AND T.Treatment = PR.Code
 WHERE T.Physician IS NULL;
--
 
 -- 8.3 Obtain the names of all physicians that have performed a medical procedure that they are certified to perform, but such that the procedure was done at a date (Undergoes.Date) after the physician's certification expired (Trained_In.CertificationExpires).
-
+SELECT DISTINCT P.Name AS Physician_name , PR.Name AS Procedure_name , U.Date AS Procedure_date, T.CertificationExpires AS Expiration_date 
+FROM Physician AS P
+JOIN Undergoes AS U ON U.Physician = P.EmployeeID
+JOIN Procedures AS PR ON PR.Code = U.Procedure
+LEFT JOIN Trained_In AS T ON T.Physician = P.EmployeeID AND T.Treatment = PR.Code
+WHERE U.Date &gt; T.CertificationExpires;
 
 -- 8.4 Same as the previous query, but include the following information in the results: Physician name, name of procedure, date when the procedure was carried out, name of the patient the procedure was carried out on, and date when the certification expired.
-
+SELECT DISTINCT P.Name AS Physician_name, PR.Name AS Procedure_name, U.Date AS Procedure_date, PA.Name AS Patient_name, T.CertificationExpires AS Expiration_date
+FROM Physician AS P
+JOIN Trained_In AS T ON T.Physician = P.EmployeeID
+JOIN Procedures AS PR ON PR.Code = T.Treatment
+JOIN Undergoes AS U ON U.Physician = P.EmployeeID AND U.Procedure = PR.Code
+JOIN Patient AS PA ON PA.SSN = U.Patient
+WHERE U.Date &gt; T.CertificationExpires;
 
 -- 8.5 Obtain the information for appointments where a patient met with a physician other than his/her primary care physician. Show the following information: Patient name, physician name, nurse name (if any), start and end time of appointment, examination room, and the name of the patient's primary care physician.
-
+SELECT p.Name AS PatientName, phy.Name AS PhysicianName, n.Name AS NurseName,
+       a.Start AS StartTime, a.End AS EndTime, a.ExaminationRoom,
+       pcp.Name AS PrimaryCarePhysician
+FROM Appointment AS a
+JOIN Patient AS p ON a.Patient = p.SSN
+JOIN Physician AS phy ON a.Physician = phy.EmployeeID
+LEFT JOIN Nurse AS n ON a.PrepNurse = n.EmployeeID
+JOIN Physician AS pcp ON p.PCP = pcp.EmployeeID
+WHERE a.Physician &lt;&gt; p.PCP;
 
 -- 8.6 The Patient field in Undergoes is redundant, since we can obtain it from the Stay table. There are no constraints in force to prevent inconsistencies between these two tables. More specifically, the Undergoes table may include a row where the patient ID does not match the one we would obtain from the Stay table through the Undergoes.Stay foreign key. Select all rows from Undergoes that exhibit this inconsistency.
-
+SELECT *
+FROM Undergoes
+WHERE Undergoes.Patient &lt;&gt; (
+  SELECT Stay.Patient
+  FROM Stay
+  WHERE Stay.StayID = Undergoes.Stay
+);
 
 -- 8.7 Obtain the names of all the nurses who have ever been on call for room 123.
-
+SELECT DISTINCT Nurse.Name
+FROM Nurse
+JOIN On_Call ON Nurse.EmployeeID = On_Call.Nurse
+JOIN Block ON On_Call.BlockCode = Block.Code
+LEFT JOIN Room ON Room.BlockCode = Block.Code
+WHERE Room.Number = 123;
 
 -- 8.8 The hospital has several examination rooms where appointments take place. Obtain the number of appointments that have taken place in each examination room.
-
-
+SELECT Appointment.ExaminationRoom, SUM(AppointmentID) AS Total_appointments_per_ExaminationRoom
+FROM Appointment
+JOIN Patient ON Appointment.Patient = Patient.SSN
+JOIN Stay ON Stay.Room = Room.Number
+JOIN Room ON Room.Number = Stay.Room
+GROUP BY Appointment.ExaminationRoom; 
+ 
 -- 8.9 Obtain the names of all patients and their primary care physician, such that the following are true:
     -- The patient has been prescribed some medication by his/her primary care physician.
     -- The patient has undergone a procedure with a cost larger that $5,000
     -- The patient has had at least two appointments where the nurse who prepared the appointment was a registered nurse.
     -- The patient's primary care physician is not the head of any department.
-</sql><current_tab id="0"/></tab_sql></sqlb_project>
+SELECT P.Name AS PatientName, PCP.Name AS PrimaryCarePhysician
+FROM Patient AS P
+JOIN Physician AS PCP ON P.PCP = PCP.EmployeeID
+JOIN Appointment AS A ON P.SSN = A.Patient
+JOIN Nurse AS N ON A.PrepNurse = N.EmployeeID
+JOIN Procedures AS PR ON A.Procedure = PR.Code
+JOIN Affiliated_With AS AW ON PCP.EmployeeID = AW.Physician
+JOIN Department AS D ON AW.Department = D.DepartmentID
+WHERE PR.Cost &gt; 5000
+  AND N.Registered = 1
+  AND A.Physician != PCP.EmployeeID
+GROUP BY P.Name, PCP.Name
+HAVING COUNT(DISTINCT A.AppointmentID) &gt;= 2;</sql><current_tab id="0"/></tab_sql></sqlb_project>
