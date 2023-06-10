@@ -56,8 +56,14 @@ ORDER BY Download_count DESC
 LIMIT 1 OFFSET 1;
 
 -- 9.7 Print the name of the package whose download count is bigger than 1000.
-
+SELECT package
+FROM cran_logs
+GROUP BY package 
+HAVING COUNT(*) &gt; 1000;
 
 -- 9.8 The field &quot;r_os&quot; is the operating system of the users.
     -- 	Here we would like to know what main system we have (ignore version number), the relevant counts, and the proportion (in percentage).
-</sql><current_tab id="0"/></tab_sql></sqlb_project>
+SELECT r_os AS OS_Name, COUNT(*) AS OS_Count
+FROM cran_logs
+ORDER BY OS_Count DESC 
+LIMIT 1;</sql><current_tab id="0"/></tab_sql></sqlb_project>
