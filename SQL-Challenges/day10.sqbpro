@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/maximilianolopezsalgado/data_projects/sql-playground/databases/day10.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1500"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:mainADDRESS"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="cran_logs" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="129"/><column index="2" value="81"/><column index="3" value="91"/><column index="4" value="81"/><column index="5" value="69"/><column index="6" value="114"/><column index="7" value="196"/><column index="8" value="132"/><column index="9" value="67"/><column index="10" value="45"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE PEOPLE (id INTEGER, name CHAR);
+
+INSERT INTO PEOPLE VALUES(1, &quot;A&quot;);
+INSERT INTO PEOPLE VALUES(2, &quot;B&quot;);
+INSERT INTO PEOPLE VALUES(3, &quot;C&quot;);
+INSERT INTO PEOPLE VALUES(4, &quot;D&quot;);
+
+CREATE TABLE ADDRESS (id INTEGER, address CHAR, updatedate date);
+
+INSERT INTO ADDRESS VALUES(1, &quot;address-1-1&quot;, &quot;2016-01-01&quot;);
+INSERT INTO ADDRESS VALUES(1, &quot;address-1-2&quot;, &quot;2016-09-02&quot;);
+INSERT INTO ADDRESS VALUES(2, &quot;address-2-1&quot;, &quot;2015-11-01&quot;);
+INSERT INTO ADDRESS VALUES(3, &quot;address-3-1&quot;, &quot;2016-12-01&quot;);
+INSERT INTO ADDRESS VALUES(3, &quot;address-3-2&quot;, &quot;2014-09-11&quot;);
+INSERT INTO ADDRESS VALUES(3, &quot;address-3-3&quot;, &quot;2015-01-01&quot;);
+INSERT INTO ADDRESS VALUES(4, &quot;address-4-1&quot;, &quot;2010-05-21&quot;);
+INSERT INTO ADDRESS VALUES(4, &quot;address-4-2&quot;, &quot;2012-02-11&quot;);
+INSERT INTO ADDRESS VALUES(4, &quot;address-4-3&quot;, &quot;2015-04-27&quot;);
+INSERT INTO ADDRESS VALUES(4, &quot;address-4-4&quot;, &quot;2014-01-01&quot;);
+
+-- 10.1 Join table PEOPLE and ADDRESS, but keep only one address information for each person (we don't mind which record we take for each person). 
+    -- i.e., the joined table should have the same number of rows as table PEOPLE
+SELECT *
+FROM PEOPLE
+JOIN ADDRESS ON ADDRESS.id = PEOPLE.id
+GROUP BY PEOPLE.id;
+
+
+-- 10.2 Join table PEOPLE and ADDRESS, but ONLY keep the LATEST address information for each person. 
+    -- i.e., the joined table should have the same number of rows as table PEOPLE
+SELECT ADDRESS.id, MAX(ADDRESS.updatedate) AS LATEST_ADDRESS
+FROM address
+JOIN PEOPLE ON PEOPLE.id = ADDRESS.id
+GROUP BY ADDRESS.id;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
